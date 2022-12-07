@@ -22,6 +22,15 @@ body {
 
 }
 
+h1 {
+    margin-bottom: 50px;
+    color: var(--line-border-fill);
+}
+
+span {
+    color: var(--line-border-empty);
+}
+
 .container {
 text-align: center;
 }
