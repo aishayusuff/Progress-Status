@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Varela+Round&display=swap');
+
+:root {
+    --line-border-fill: #32161f;
+    --line-border-empty: #e0e0ee;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #b76d68;
+    color: #f6f7fb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+
+}
+
+.container {
+text-align: center;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 25px;
+    max-width: 100%;
+    width: 300px;
+}
+
+.progress-container::before {
+    /* when '::before' is used, you need to use 'content' */
+    content: '';
+    background-color: var(--line-border-empty);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: .5s ease;
+}
+
+.progress-line {
+    background-color: var(--line-border-fill);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: .5s ease;
+}
+
+.circle {
+   background-color: #f6f7fb;
+    color: #999;
+    border-radius: 50%;
+    border: 3px solid var(--line-border-empty);
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s ease;
+}
+
+.circle.active {
+    background-color: var(--line-border-fill);
+    border-color: var(--line-border-fill);
+    color: #f6f7fb;
+}
+
+.btn {
+border-radius: 15px;
+border: 0;
+background-color: var(--line-border-fill);
+color: #f6f7fb;
+font-family: inherit;
+font-size: 15px;
+padding: 8px 30px;
+margin: 5px;
+cursor: pointer;
+}
+
+.btn:active {
+    transform: scale(.98);
+}
+
+.btn:focus {
+outline: none;
+}
+
+.btn:disabled {
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+    color: #999;
+}
